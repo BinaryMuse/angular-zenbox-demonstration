@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  div(ng-controller="MainController")
+    
+    div
+      h2 Example 1
+      button(ng-click='modal1 = true') Show Modal 1
+      p modal1 = {{modal1 | json}}
+      div.modal(modal='modal1', modal-close='modal1 = false')
+        | Just a basic modal; works fine.
+      hr
+
+    div
+      h2 Example 2
+      button(ng-click='modal2 = true') Show Modal 2
+      br
+      button(ng-click='data.modal2Value = "data set from button"') Set modal2 text
+      br
+      | Modal 2 Input:
+      input(type='text', ng-model='data.modal2Value')
+      div.modal(modal='modal2', modal-close='modal2 = false')
+        | A modal with an input field that is shared outside the modal; also works fine.
+        input(type='text', ng-model='data.modal2Value')
+        button(ng-disabled='data.modal2Value.length == 0') Should be disabled when input is empty
+      hr
+
+    div
+      h2 Example 3
+      button(ng-click='data.step="show"') Show Modal 3
+      br
+      button(ng-click='data.modal3Value = "data set from button"') Set modal3 text
+      br
+      | Modal 3 Input:
+      input(type='text', ng-model='data.modal3Value')
+      div(transcluded='show')
+        | A transcluded modal with an input shared outside the modal.
+        input(type='text', ng-model='data.modal3Value')
+        button(ng-disabled='data.modal3Value.length == 0') Should be disabled when input is empty
+      hr
