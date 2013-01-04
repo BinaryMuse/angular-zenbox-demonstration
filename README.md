@@ -41,7 +41,7 @@ To see the problem, follow the following steps:
   2. Enter text into the input. Notice that the button becomes enabled and that the text in the input on the page behind the modal correctly changes.
   3. Erase the text from the input. Notice that the button becomes disabled.
   4. Close the modal by clicking the `x` button.
-  5. CLick the 'Set modal3 text' button.
+  5. Click the 'Set modal3 text' button.
   6. Click the button to show the modal again. Notice that the input inside the modal has *not* changed to the programmatically set text, and that the button no longer becomes enabled or disabled based on the contents of the field.
 
 It's also worth noting that the problem exists even if you don't click the 'Set modal3 text' button; simply re-opening the modal and trying to use the input is enough to demonstrate that it is broken.
